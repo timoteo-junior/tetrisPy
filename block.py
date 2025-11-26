@@ -28,15 +28,15 @@ class Block:
         self.rotation_state += 1
         if self.rotation_state == len(self.cells):
             self.rotation_state = 0
-
+        
     def undo_rotation(self):
-        self.rotation_state -= 1    
-        if self.rotation_state == 0:
+        self.rotation_state -= 1
+        if self.rotation_state == -1:
             self.rotation_state = len(self.cells) - 1
 
-    def draw(self, screen):
+    def draw(self, screen, offset_x, offset_y):
         tiles = self.get_cells_positions()
         for tile in tiles:
-            tile_rect = pygame.Rect(tile.column * self.cell_size + 1, tile.row * self.cell_size + 1, 
+            tile_rect = pygame.Rect(offset_x + tile.column * self.cell_size, offset_y + tile.row * self.cell_size, 
             self.cell_size -1, self.cell_size -1)
             pygame.draw.rect(screen, self.color[self.id], tile_rect)
