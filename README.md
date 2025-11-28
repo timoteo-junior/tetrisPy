@@ -1,12 +1,11 @@
 # Tetris com Pygame
 
 ### **Membros da equipe:**
+* Filipe José
 
 * Pedro Roberto
 
 * Timóteo Júnior
-
-* Filipe José
 
 ### **Informações do jogo**
 
